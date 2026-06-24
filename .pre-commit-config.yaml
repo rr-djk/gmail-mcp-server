@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks
+
+  - repo: local
+    hooks:
+      - id: semgrep
+        name: semgrep
+        entry: semgrep scan --config=auto --error
+        language: system
+        types: [file]
+        pass_filenames: true
